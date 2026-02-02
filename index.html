@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+  <title>MIDIAN新型ペルチェ冷却服｜酷暑を-25℃へ</title>
+  <meta name="description" content="新登場、業界初32Vペルチェ冷却服。38℃現場でも1秒で-25℃体感。送風＋冷却のWモードで頭まで涼しい。現場作業・イベント・レジャーにも最適。">
+  <meta name="keywords" content="冷却服,ペルチェ,猛暑対策,現場作業,2025,32V,熱中症対策,空調服">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property="og:title" content="新型ペルチェ冷却服｜酷暑を-25℃でサラサラ快適">
+  <meta property="og:description" content="業界初32Vペルチェ冷却服。38℃現場でも1秒で-25℃体感。送風＋冷却のWモードで頭まで涼しい。現場作業・イベント・レジャーにも最適。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alljpkikaku-droid.github.io/AJP-midian/">
+  <meta property="og:image" content="https://alljpkikaku-droid.github.io/AJP-midian/assets/og.jpg">
+  <link rel="canonical" href="https://alljpkikaku-droid.github.io/AJP-midian/">
+  <link rel="icon" href="assets/favicon.ico">
+  <style>
+    :root{
+      --sub:#00c2cb;
+      --dark:#002233;
+      --grad:linear-gradient(135deg,#00c2cb 0%,#0088ff 100%);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:"Hiragino Kaku Gothic ProN","メイリオ",sans-serif;}
+    body{background:#fff;color:#222;line-height:1.8;}
+    img,video{width:100%;display:block;}
+    a{color:var(--sub);}
+    header{
+      background:var(--grad);
+      color:#fff;
+      padding:12vh 4vw;
+      text-align:center;
+    }
+    header h1{font-size:clamp(28px,5vw,52px);letter-spacing:.05em;}
+    header p{font-size:clamp(16px,2.5vw,22px);margin-top:1rem;}
+    .btn{
+      display:inline-block;
+      background:#ff4d4d;
+      color:#fff;
+      padding:1rem 3rem;
+      border-radius:50px;
+      font-size:1.3rem;
+      font-weight:bold;
+      margin-top:2rem;
+      box-shadow:0 8px 20px rgba(255,77,77,.4);
+      transition:.3s;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(255,77,77,.5);}
+    section{padding:10vh 4vw;max-width:1100px;margin:auto;}
+    h2{font-size:clamp(24px,4vw,40px);margin-bottom:2rem;text-align:center;}
+    .grid{
+      display:grid;
+      gap:2rem;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+    .card{
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 4px 20px rgba(0,0,0,.08);
+      background:#f7fbfd;
+      display:flex;
+      flex-direction:column;
+    }
+    .card img{
+      width:100%;
+      height:150px;
+      object-fit:contain;
+      object-position:center;
+      background:#fff;
+    }
+    .card>div{padding:1rem 1.5rem;}
+    .card h3{margin-bottom:.6rem;font-size:1.15rem;}
+    .spec{
+      background:var(--dark);
+      color:#fff;
+      border-radius:12px;
+      padding:2rem;
+      margin-top:3rem; 
+    }
+    .spec table{width:100%;border-collapse:collapse;margin-top:1rem;}
+    .spec th{background:rgba(255,255,255,.1);padding:1rem;}
+    .spec td{padding:1rem;border-bottom:1px solid rgba(255,255,255,.15);}
+    footer{
+      background:#000;
+      color:#fff;
+      text-align:center;
+      padding:3rem 4vw;
+      font-size:.7rem;
+    }
+    .specBg{
+      padding:10vh 4vw;
+      color:#fff;
+      text-shadow:0 0 4px #000;
+    }
+    .specOverlay{
+      max-width:1100px;
+      margin:auto;
+      background:rgba(0,0,0,.45);
+      border-radius:12px;
+      padding:1rem;
+    }
+    .specOverlay table{width:100%;border-collapse:collapse;margin-top:1rem;}
+    .specOverlay th{background:rgba(255,255,255,.15);padding:1rem;}
+    .specOverlay td{padding:1rem;border-bottom:1px solid rgba(255,255,255,.2);}
+
+    @media(max-width:768px){
+      .specOverlay{padding:1.5rem;}
+    }
+    
+    /* ===== 修复后的模态框 ===== */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.85);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      z-index:9999;
+      opacity:0;
+      visibility:hidden;  /* 改用 visibility 替代 pointer-events */
+      transition:opacity .3s, visibility .3s;
+    }
+    .modal.show{
+      opacity:1;
+      visibility:visible;
+    }
+    .modal-content{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .modal img{
+      max-width:90vw;
+      max-height:90vh;
+      object-fit:contain;
+      border-radius:8px;
+    }
+    
+    /* ===== ミニ自動ループ ===== */
+    .miniCarousel{
+      position:relative;
+      overflow:hidden;
+      border-radius:6px 6px 0 0;
+      cursor:pointer;
+      height:160px;
+      background:#fff;
+    }
+    .miniTrack{
+      display:flex;
+      height:100%;
+      animation:slideLoop 20s linear infinite;
+    }
+    .miniTrack:hover{
+      animation-play-state:paused;
+    }
+    .miniTrack img{
+      height:100%;
+      width:auto;
+      object-fit:contain;
+      object-position:center;
+      margin-right:5px;
+      background:#fff;
+    }
+    @keyframes slideLoop{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-60%);}
+    }
+
+    /* 矢印ボタン */
+    .arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,.5);
+      color:#fff;
+      border:none;
+      font-size:2rem;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      cursor:pointer;
+      z-index:10001;
+      line-height:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .arrow.left{left:1rem;}
+    .arrow.right{right:1rem;}
+    .arrow:hover{background:rgba(0,0,0,.8);}
+    
+    .close-btn{
+      position:absolute;
+      top:30px;
+      right:40px;
+      background:rgba(255,255,255,0.1);
+      border:2px solid rgba(255,255,255,0.3);
+      color:white;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      cursor:pointer;
+      font-size:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all 0.3s ease;
+      z-index:10002;
+      backdrop-filter:blur(10px);
+    }
+    .close-btn:hover{
+      background:rgba(255,100,100,0.3);
+      border-color:rgba(255,100,100,0.6);
+      transform:rotate(90deg);
+    }
+    
+    .image-counter{
+      position:absolute;
+      bottom:10px;
+      left:50%;
+      transform:translateX(-50%);
+      color:rgba(255,255,255,0.9);
+      font-size:16px;
+      background:rgba(0,0,0,0.6);
+      padding:0px 0px;
+      border-radius:10px;
+      z-index:10002;
+      }
+    .seo-hidden {
+     position: absolute;
+     left: -9999px;
+     top: auto;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+     white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+<!-- SEO補助テキスト（非表示・検索エンジン向け） -->
+<div class="seo-hidden">
+  ペルチェ冷却服 MIDIAN は、32V 高出力のペルチェ冷却ベストです。
+  作業用冷却服・空調服として、建設現場、農作業、倉庫作業、
+  高温環境での暑さ対策に最適なファン付き作業着です。
+</div>
+<header>
+  <h1>MIDIAN新型ペルチェ冷却服<br>酷暑を-25℃でサラサラ快適</h1>
+  <p>業界初・32Vダブル冷却</p>
+<a class="btn" href="https://item.rakuten.co.jp/yoi5/md14d/" target="_blank" rel="noopener">今すぐ購入<br>楽天市場</a>
+</header>　
+<div class="miniCarousel" data-set="9" onclick="openModal(event.target.src)">
+  <div class="miniTrack">
+    <!-- 1セット目（9枚） -->
+    <img src="assets/04.jpg" alt=""><img src="assets/06.jpg" alt=""><img src="assets/7-1.jpg" alt="">
+    <img src="assets/8-1.jpg" alt=""><img src="assets/10.jpg" alt=""><img src="assets/10-1.jpg" alt="">
+    <img src="assets/4-1.jpg" alt=""><img src="assets/15.jpg" alt=""><img src="assets/01 (2).jpg" alt="">
+    <!-- 2セット目（9枚） -->
+    <img src="assets/04.jpg" alt=""><img src="assets/06.jpg" alt=""><img src="assets/7-1.jpg" alt="">
+    <img src="assets/8-1.jpg" alt=""><img src="assets/10.jpg" alt=""><img src="assets/10-1.jpg" alt="">
+    <img src="assets/4-1.jpg" alt=""><img src="assets/15.jpg" alt=""><img src="assets/01 (2).jpg" alt="">
+  </div>
+</div>
+<!-- 中央配置の補足文 -->
+<p style="text-align:center;margin:0.2rem 0 .01rem;font-size:0.9rem;color:#555;">写真をクリックして詳細確認できます。ESCキーで閉じる</p>
+<section>
+  <h2>瞬冷ワンランク上のクールテック</h2>
+  <div class="grid">
+    <!-- 以下、画像ファイル名は例です。お手持ちのファイル名に置き換えてください -->
+    <div class="card">
+      <img src="assets/01 (2).jpg" alt="" onclick="openModal(this.src)">
+      <div>
+        <h3>新登場ペルチェ冷却服</h3>
+        <p>大面積ペルチェ冷却プレートが1秒で冷感を伝え、38℃の炎天下でも局所温度を約-25℃下げる圧倒的冷却力。</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="assets/2-1.jpg"alt="" onclick="openModal(this.src)">
+      <div>
+        <h3>首スッと涼感</h3>
+        <p>独自の3D立体風道設計により、風の通り道を立体的に確保。襟元から頭部方向へと自然な空気の流れを生み出します。
+頭部周辺に溜まりやすい熱気を効率的に排出</p>
+      </div>
+      </div>
+    <div class="card">
+      <img src="assets/2-2.jpg" alt="" onclick="openModal(this.src)">
+      <div>
+        <h3>瞬冷、-25℃体感</h3>
+        <p>冷却器＋扇風機のWモードで他社比-25℃の体感温度を実現。猛暑作業も快適に。</p>
+      </div>
+    </div>
+     <div class="card">
+      <img src="assets/18-3.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>パワフル送風最強３２V出力<br>最高風速１４８L/s  </h3><p>強力な風を生み出し、
+衣服内の空気を素早く循環。こもりやすい熱気を外へ逃がし、快適な体感環境を作り出す</p></div>
+    </div>
+ <div class="card">
+      <img src="assets/8-2.jpg" alt="" onclick="openModal(this.src)">
+      <div>
+        <h3>32V 超高出力大容<br>PSE認証取得・PL保険加入済</h3>
+        <p>21700型リチウムイオン電池を採用,効率と安定した高出力を実現。残量表示機能により、使用状況を把握しながら計画的な運用が可能です。</p>
+      </div>
+    </div>
+ <div class="card">
+      <img src="assets/15.jpg" alt="" onclick="openModal(this.src)">
+      <div>
+        <h3>扇風機＋冷却器<br>ダブル冷却構造</h3>
+        <p>ペルチェ冷却ベストとファン付き作業着を組み合わせた、冷却ユニットが体を直接冷やし、ファンが冷気を衣服内に循環させることで、背中・脇・首元まで効率よく冷却します。</p>
+      </div>
+    </div>
+    <!-- ② -->
+    <div class="card">
+      <img src="assets/11.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>隠し吊り環ベルト<br>高所作業対応設計</h3><p>安全ベルト装着時も、
+作業性・通気性を確保。</p></div>
+    </div>
+
+    <!-- ③ -->
+    <div class="card">
+      <img src="assets/12-1.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>ファスナー付きで<br>工具・小物の収納に対応</h3><p>収納性・冷却性能・着用感を細部まで考えた設計。
+作業現場で求められる機能を一着に集約しました。</p></div>
+    </div>
+
+    <!-- ④ -->
+    <div class="card">
+      <img src="assets/12.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>保冷済メッシュポケット</h3><p>保冷剤を入れることで、
+さらに涼しさをプラス。</p></div>
+    </div>
+
+    <!-- ⑤ -->
+    <div class="card">
+      <img src="assets/13.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>マジックテープ付きで<br>使用モードを自由に切り替え</h3><p>冷却器を接続しない場合は、
+マジックテープを貼るだけで、
+通常の空調服として快適に着用できます。</p></div>
+    </div>
+
+    <!-- ⑥ -->
+    <div class="card">
+      <img src="assets/18-2.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>ファン・数秒で取り付け可能<br>初めての方でも簡単装着</h3><p>本製品は、工具不要で簡単に取り付けできるファンユニットを採用。
+複雑な作業は一切なく、初めての方でも短時間で装着が可能です。</p></div>
+    </div>
+
+    <!-- ⑦ -->
+    <div class="card">
+      <img src="assets/20.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>冷却器取り外し<br>取り付け方法</h3><p>冷却器はリングを回すだけで簡単に着脱可能。
+工具不要で、使用シーンに応じた切り替えができます。</p></div>
+    </div>
+
+    <!-- ⑧ -->
+    <div class="card">
+      <img src="assets/14.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>7サイズ2色（男女兼用）</h3><p>本製品は、男女兼用設計の作業用ベストです。
+S～5Lまで幅広いサイズ展開で、
+体型や作業内容に合わせてお選びいただけます。</p></div>
+    </div>
+
+    <!-- ⑨ -->
+    <div class="card">
+      <img src="assets/23.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>特許技術をMIDIANの快適性<br>実用性を実現する</h3><p>MIDIANは、革新と技術を原動力とし、
+実用性を重視した特許技術を数多く保有しています。快適性・機能性・デザイン性のバランスを追求し、
+作業現場から日常シーンまで、</p></div>
+    </div>
+    <!-- ⑩ -->
+    <div class="card">
+      <img src="assets/21.jpg" alt="" onclick="openModal(this.src)">
+      <div><h3>色んなシーンで大活躍！</h3><p>現場作業から農作業、倉庫作業、
+さらには釣りやアウトドアまで。暑さ対策が求められるさまざまなシーンで、
+快適な作業環境をサポートします。</p></div>
+    </div>
+</section>
+<section style="text-align:center;padding:0;">
+  <h2>冷却器ベルチェ素子の仕組みを動画でチェック</h2>
+  <div style="display:inline-block;width:70%;max-width:460px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+    <video controls preload="metadata" poster="assets/06.jpg" style="width:100%;border-radius:8px;">
+      <source src="assets/cooler_plate.mp4" type="video/mp4">
+      ご利用のブラウザはvideoタグに非対応です。
+    </video>
+  </div>
+</section>
+<!-- === 全体1枚写真バージョン === -->
+<section class="specBg" style="background:url('assets/24(1).jpg') center/cover no-repeat;">
+  <section class="spec">
+  <h2>スペック&付属品</h2>
+  <table>
+    <tr><th>冷却方式</th><td>半導体ペルチェ＋9枚羽根ファン ダブル冷却</td></tr>
+    <tr><th>バッテリー</th><td>32V 20000mAh 21700セル / PSE認証済</td></tr>
+    <tr><th>稼働時間</th><td>ファン単独：最大36h / 両方：最大8.5h</td></tr>
+    <tr><th>ファン風量</th><td>最大194CFM（約148 L/s）/ 5段階調整 / 3cm超薄型</td></tr>
+    <tr><th>冷却器</th><td>3段階調整 / 着脱式</td></tr>
+    <tr><th>生地機能</th><td>防水・防油・防汚 / UV98%カット / 吸水速乾</td></tr>
+    <tr><th>サイズ</th><td>S～5L（男女兼用）</td></tr>
+    <tr><th>保証</th><td>メーカー1年保証 / PL保険加入済</td></tr>
+  </table>
+  <p style="margin-top:1.5rem;">付属：冷却服×2、32Vファン×2、冷却器×2、32Vバッテリー×1、各種ケーブル・充電器・マジックテープ・日本語説明書</p>
+</section>
+<!-- 积雪文字セクション（中央＋雪面） -->
+<section style="text-align:center;background:linear-gradient(135deg,#fff 0%,#f5f9ff 100%);padding:2rem 4vw;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.05);">
+  <h2 style="margin:0 0 1rem;font-size:2rem;color:#002233;letter-spacing:.05em;
+             text-shadow:0 2px 0 #fff,0 4px 8px rgba(0,0,0,.15);
+             background:linear-gradient(180deg,#fff 0%,#e5f3ff 100%);
+             padding:0.5rem 1rem;border-radius:50px;box-shadow:inset 0 2px 4px rgba(0,0,0,.05);">
+    1秒で冷える！38℃の炎天もこの1枚で爽快
+  </h2>
+  <a class="btn" href="https://item.rakuten.co.jp/yoi5/md14d/" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#00c2cb 0%,#0088ff 100%);color:#fff;padding:0.8rem 2rem;border-radius:50px;font-size:1rem;font-weight:bold;box-shadow:0 4px 16px rgba(0,0,0,.2);">今すぐ購入<br>楽天市場</a>
+</section>
+<div style="text-align:center;background:#ffffbfd;padding:0;">
+  <div style="display:inline-block;width:70%;max-width:360px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+    <video controls preload="metadata" style="width:100%;border-radius:6px;">
+      <source src="assets/midian.mp4" type="video/mp4">
+      ご利用のブラウザはvideoタグに非対応です。
+    </video>
+  </div>
+</div>
+<footer>
+ 卸販売・OEM お問い合わせは<a href="http://www.ajp-kikaku.co.jp/" target="_blank" rel="noopener"><br>オールジャパン企画株式会社<br></a>
+群馬県桐生市菱町3-2013-2-101　メール：info@jp465.jp</a>まで<br>
+  &copy; 2026 AJP Kikaku Co.,Ltd. All Rights Reserved.
+</footer>
+<!-- モーダル要素 -->
+<div id="imageModal" class="modal" onclick="closeModal(event)">
+  <img id="modalImg" src="" alt="">
+  <button class="arrow left" onclick="changeImage(-1)">‹</button>
+  <button class="arrow right" onclick="changeImage(1)">›</button>
+</div>
+
+<script>
+/* --- ミニループ自動設定 --- */
+document.querySelectorAll('.miniTrack').forEach(track => {
+  const set = track.dataset.set || 3;
+  const speed = set * 3.3;
+  track.style.animation = `slideLoop ${speed}s linear infinite`;
+  /* クリックで原寸 */
+  track.querySelectorAll('img').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => openModal(img.src));
+  });
+});
+</script>
+</script>
+<!-- </body>の直上（</body>の直前）に追加 -->
+<script>
+/* --- 原寸モーダル（共通） --- */
+let currentIndex = 0;          // 現在表示中の画像インデックス
+let imageList    = [];         // 表示対象画像のsrc配列
+
+function openModal(src){
+  const modal   = document.getElementById('imageModal');
+  const modalImg= document.getElementById('modalImg');
+  modalImg.src = src;
+  modal.classList.add('show');
+
+  /* 矢印用：同じminiCarousel内の画像を配列化 */
+  const carousel = document.querySelector('.miniCarousel:hover .miniTrack') || 
+                   document.querySelector('.miniCarousel .miniTrack');
+  if (carousel) {
+    imageList = Array.from(carousel.querySelectorAll('img')).map(img => img.src);
+    currentIndex = imageList.indexOf(src);
+  } else {
+    imageList = [src];
+    currentIndex = 0;
+  }
+}
+
+function closeModal(ev){
+  if (ev.target === document.getElementById('imageModal')) {
+    document.getElementById('imageModal').classList.remove('show');
+  }
+}
+
+function changeImage(dir){
+  if (imageList.length === 0) return;
+  currentIndex = (currentIndex + dir + imageList.length) % imageList.length;
+  document.getElementById('modalImg').src = imageList[currentIndex];
+}
+
+/* キーボード左右矢印でも操作 */
+document.addEventListener('keydown', e => {
+  if (document.getElementById('imageModal').classList.contains('show')) {
+    if (e.key === 'ArrowLeft')  changeImage(-1);
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'Escape')     closeModal({target: document.getElementById('imageModal')});
+  }
+});
+/* --- 閉じる共通関数 --- */
+function closeModal(ev){
+  // 背景クリック or Escキーで閉じる
+  if (ev.target === document.getElementById('imageModal') || ev.key === 'Escape') {
+    document.getElementById('imageModal').classList.remove('show');
+  }
+}
+/* 矢印ボタンクリックでも閉じないようにする（イベント伝播止め） */
+document.querySelectorAll('.arrow').forEach(btn => {
+  btn.addEventListener('click', e => e.stopPropagation());
+});
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
